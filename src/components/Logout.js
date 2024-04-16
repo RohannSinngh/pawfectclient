@@ -1,44 +1,39 @@
 import { useNavigate } from 'react-router-dom';
-import React, {useContext } from 'react';
+import React, {useContext,useEffect } from 'react';
 import { UserContext } from '../App';
 
 const Logout = () => {
-    const {dispatch} = useContext(UserContext);
 
-    const navigate = useNavigate();
-    const handleLogout = async () => {
-    try {
-      const response = await fetch('/logout', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'include' 
-      });
+  const {dispatch1} = useContext(UserContext);
 
-      if (response.ok) {
-        // Clear user data from client-side storage (e.g., React state, local storage)
-        // For example, reset user data stored in React state
-        // setUserData(null);
-        dispatch({type:"USER", payload:false}) // dispatchh 
+  const navigate = useNavigate();
 
-        // Redirect to the login page
+  useEffect(() => {
+    fetch('/logout', {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch1({type:"USER",payload:false});
+
+        if (data.message === 'User LogOut Successfully') {
+          window.alert('Logout Successfully!');
+        } else if (data.error === 'Login first') {
+          window.alert('Login first!');
+        }
         navigate('/login', { replace: true });
-      } else {
-        // Handle error if logout fails
-        console.error('Logout failed');
-      }
-    } catch (error) {
-      console.error('Logout error:', error);
-    }
-  };
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [navigate,dispatch1]);
 
-  return (
-    <div>
-      <h2>Logout Page</h2>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
-  );
+  return <div style={{ textAlign: 'center', marginTop: '20vh' }}></div>;
 };
 
 export default Logout;

@@ -1,0 +1,42 @@
+import '../App.css'; // Import your CSS file for styling
+import React, { useState, useEffect } from 'react';
+
+const Petacc = () => {
+    const [userName, setUsername] = useState('');
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        const userHomePage = async () => {
+            try {
+                const res = await fetch('/accessories', {
+                    method: "GET",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json"
+                    },
+                    credentials: "include"
+                });
+                const data = await res.json();
+                console.log(data);
+
+                if (data.name) {
+                    setUsername(data.name); // Assuming the response is an array of data objects
+                    setShow(true);
+                } else {
+                    setUsername(''); // Clear user data
+                    setShow(false);
+                }
+            } catch (err) {
+                console.log('Error fetching data:', err);
+            }
+        };
+        userHomePage();
+    }, []);
+
+    return 
+        
+    // <h2> "About" </h2>
+
+};
+
+export default Petacc;

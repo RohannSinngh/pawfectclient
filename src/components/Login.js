@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { useState } from 'react';  // Remove React import since it's already declared automatically
 import { useNavigate } from 'react-router-dom';
-
 import { UserContext } from '../App';
 
 const Login = () => {
@@ -38,7 +37,7 @@ const Login = () => {
       if (data.status === 400 || !data) {
         window.alert("Invalid credentials");
       } else {
-        dispatch({ type: "USER", payload: true }); // Dispatch action to update user state
+        // dispatch({ type: "USER", payload: true }); // Dispatch action to update user state
         window.alert("Login successful");
         navigate('/');
       }
