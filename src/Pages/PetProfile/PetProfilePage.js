@@ -110,7 +110,8 @@ const PetProfilePage = () => {
             <Typography variant="h5" className="form-title">
               Adoption Form
             </Typography>
-            <AdoptionForm closeModal={() => setOpen(false)} />
+            {/* <AdoptionForm closeModal={() => setOpen(false)} /> */}
+            <AdoptionForm closeModal={() => setOpen(false)} pet={id}/>
           </Box>
         </Modal>
       </Grid>

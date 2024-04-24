@@ -5,14 +5,15 @@ import {
 } from "../actionTypes/categories";
 
 // Action creator returning a function (thunk)
-export const fetchAllCategories = () => (dispatch) => {
+// export const fetchAllCategories = () => (dispatch) => {
+  export const fetchAllCategories = ({dispatch}) => {
+
   dispatch({
     type: SET_CATEGORIES_LOADER,
     payload: true,
   });
 
-  getAllCategories()
-    .then(({ data }) => {
+  getAllCategories().then(({ data }) => {
       dispatch({
         type: SET_CATEGORIES_LOADER,
         payload: false,

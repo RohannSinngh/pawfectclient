@@ -6,6 +6,7 @@
 }
 
 /* Body styles */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -56,7 +57,7 @@ footer {
 }
 .home-page {
   background-color:  #007bff; /* Set background color */
-  height: 100vh; /* Set height to full viewport height */
+  height: 10vh; /* Set height to full viewport height */
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
@@ -77,3 +78,137 @@ footer {
   color: #FFA500; /* Set color for paragraph */
 }
 
+
+.text-content {
+  text-align: center;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.text-content h4 {
+  margin-top: 0;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #007bff; /* Set the background color */
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Adjust the font size of the brand */
+  font-weight: bold; /* Make the brand text bold */
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff; /* Set the color of the nav links */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff; /* Set the color of nav links on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Add a background color on hover */
+}
+
+.navbar-toggler {
+  border-color: #ffffff; /* Set the color of the navbar toggler */
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff; /* Set the color of the navbar toggler icon */
+}
+
+/* navbar.css */
+
+.navbar-nav .nav-item.active .nav-link {
+  background-color: #ffffff; /* Set the background color of the active tab */
+  color: #007bff; /* Set the text color of the active tab */
+  border-radius: 0.25rem; /* Add some border radius for a rounded look */
+  font-weight: bold; /* Make the text bold */
+}
+
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  /* hello */
+}
+
+.signup-content {
+  display: flex;
+}
+
+.signup-form {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-button {
+  text-align: center;
+}
+
+.form-submit {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+  background-color: #0056b3;
+}
+
+.signup-image {
+  flex: 1;
+  text-align: center;
+}
+
+.signup-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.signup-image-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signup-image-link:hover {
+  color: #0056b3;
+}
+
+/* styles.css login */
+
+/* styles.css */

@@ -15,13 +15,12 @@ const Copyright = () => {
   );
 }
 
-const Footer = ({title ,description }) => {
-
+const Footer = ({ title, description }) => {
   return (
     <Box component="footer" sx={{ bgcolor: "background.paper", py: 6 }}>
       {/* py- padding top and padding bottom */}
       <Container maxWidth="lg">
-        <Typography variant="h6" align="center" gutterBottom>
+        <Typography variant="h6" align="center" gutterBottom style={{ color: "#000" }}>
           {title}
         </Typography>
         <Typography
@@ -37,6 +36,7 @@ const Footer = ({title ,description }) => {
     </Box>
   );
 }
+
 
 Footer.propTypes = {
   description: PropTypes.string.isRequired,

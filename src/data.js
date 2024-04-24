@@ -3,12 +3,12 @@ export const mainFeaturedPost = {
   description: "Every Pet Deserves a Good Home.",
   image: "images/image.jpg",
   // <img src='images/image.jpg' width='300'/>,
-  link: [
-    { text: "Dogs", url: "dogs" },
-    { text: "Cats", url: "cats" },
-    { text: "Birds", url: "birds" },
-    { text: "Others", url: "others" },
-  ],
+  // link: [
+  //   { text: "Dogs", url: "dogs" },
+  //   { text: "Cats", url: "cats" },
+  //   { text: "Birds", url: "birds" },
+  //   { text: "Others", url: "others" },
+  // ],
   imageText: "main image description",
 };
 

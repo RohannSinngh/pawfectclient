@@ -6,25 +6,24 @@
 // import Link from '@mui/material/Link';
 // import Box from '@mui/material/Box';
 
-// // function MainFeaturedPost(props) {
-//   // const { post } = props;
-// const MainFeaturedPost = ({mainFeaturedPost}) => {
-//   return (
-// <Paper
-//   sx={{
-//     position: 'relative',
-//     backgroundColor: 'grey.800',
-//     color: '#fff',
-//     mb: 4,
-//     backgroundSize: 'cover',
-//     backgroundRepeat: 'no-repeat',
-//     backgroundPosition: 'center',
-//     backgroundImage: `url(images/image.jpg)`, // Use backticks and remove img tag
-//   }}
-// >
-//   <img src='images/image.jpg' width='200' /> {/* Add img tag here */}
-//       {/* Increase the priority of the hero background image */}
+// function MainFeaturedPost(props) {
+//   const { post } = props;
 
+//   return (
+//     <Paper
+//       sx={{
+//         position: 'relative',
+//         backgroundColor: 'grey.800',
+//         color: '#fff',
+//         mb: 4,
+//         backgroundSize: 'cover',
+//         backgroundRepeat: 'no-repeat',
+//         backgroundPosition: 'center',
+//         // backgroundImage: `url(${post?.image})`,
+//       }}
+//     >
+//       {/* Increase the priority of the hero background image */}
+//         {/* <img src='images/image.jpg' width='200' />  */}
 //       <Box
 //         sx={{
 //           // position: 'absolute',
@@ -45,14 +44,14 @@
 //             }}
 //           >
 //             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-//               {mainFeaturedPost?.title}
+//               {post?.title}
 //             </Typography>
 //             <Typography variant="h5" color="inherit" paragraph>
-//               {mainFeaturedPost?.description}
+//               {post?.description}
 //             </Typography>
-//             {/* <Link variant="subtitle1" href="#">
-//               // {mainFeaturedPost?.linkText}
-//             </Link> */}
+//             <Link variant="subtitle1" href="#">
+//               {post?.linkText}
+//             </Link>
 //           </Box>
 //         </Grid>
 //       </Grid>
@@ -65,12 +64,14 @@
 //     description: PropTypes.string.isRequired,
 //     image: PropTypes.string.isRequired,
 //     imageText: PropTypes.string.isRequired,
-//     linkText: PropTypes.string.isRequired,
+//     linkText: PropTypes.string,
 //     title: PropTypes.string.isRequired,
 //   }).isRequired,
 // };
 
 // export default MainFeaturedPost;
+
+// edited on 19th night 4 am 
 
 import * as React from "react";
 import PropTypes from "prop-types";
@@ -84,15 +85,6 @@ function MainFeaturedPost(props) {
   const { post } = props;
   return (
     <>
-      <Grid container spacing={2}>
-        <Grid>
-          {post?.link?.map((link) => (
-            <Link variant="subtitle1" href={link.url}>
-              {link.text}
-            </Link>
-          ))}
-        </Grid>
-      </Grid>
       <Paper
         sx={{
           position: "relative",

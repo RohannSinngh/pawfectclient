@@ -19,7 +19,7 @@ const schema = yup
   })
   .required();
 
-const AdoptionForm = ({ closeModal }) => {
+const AdoptionForm = ({ closeModal, pet }) => {
   const {
     handleSubmit,
     control,
@@ -32,6 +32,7 @@ const AdoptionForm = ({ closeModal }) => {
       email: "",
       phone: "",
       address: "",
+      pet:pet
     },
     resolver: yupResolver(schema),
   });
@@ -142,3 +143,96 @@ const AdoptionForm = ({ closeModal }) => {
 };
 
 export default AdoptionForm;
+
+
+
+
+// import React, { useState } from "react";
+// import { useDispatch } from "react-redux";
+// import { createAdoption } from "../redux/actions/adoptions";
+
+// const AdoptionForm = ({ closeModal }) => {
+//   const dispatch = useDispatch();
+//   const [formData, setFormData] = useState({
+//     firstName: "",
+//     lastName: "",
+//     email: "",
+//     phone: "",
+//     address: "",
+//   });
+//   const [errors, setErrors] = useState({});
+
+//   const handleChange = (e) => {
+//     setFormData({
+//       ...formData,
+//       [e.target.name]: e.target.value,
+//     });
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       await dispatch(createAdoption(formData));
+//       closeModal();
+//     } catch (error) {
+//       // Handle error response from server
+//       setErrors(error.response.data.errors);
+//     }
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input
+//         type="text"
+//         name="firstName"
+//         value={formData.firstName}
+//         onChange={handleChange}
+//         placeholder="First Name"
+//       />
+//       {errors.firstName && <p>{errors.firstName}</p>}
+      
+//       <input
+//         type="text"
+//         name="lastName"
+//         value={formData.lastName}
+//         onChange={handleChange}
+//         placeholder="Last Name"
+//       />
+//       {errors.lastName && <p>{errors.lastName}</p>}
+      
+//       <input
+//         type="email"
+//         name="email"
+//         value={formData.email}
+//         onChange={handleChange}
+//         placeholder="Email"
+//       />
+//       {errors.email && <p>{errors.email}</p>}
+      
+//       <input
+//         type="text"
+//         name="phone"
+//         value={formData.phone}
+//         onChange={handleChange}
+//         placeholder="Phone Number"
+//       />
+//       {errors.phone && <p>{errors.phone}</p>}
+      
+//       <input
+//         type="text"
+//         name="address"
+//         value={formData.address}
+//         onChange={handleChange}
+//         placeholder="Address"
+//       />
+//       {errors.address && <p>{errors.address}</p>}
+      
+//       <button type="submit">Adopt</button>
+//       <button type="button" onClick={closeModal}>
+//         Cancel
+//       </button>
+//     </form>
+//   );
+// };
+
+// export default AdoptionForm;

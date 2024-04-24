@@ -24,9 +24,9 @@ function FeaturedPet({  pet  }) {
           <Typography variant="subtitle1" color="text.secondary">
             Breed - {pet?.breed}
           </Typography>
-          <Typography variant="subtitle1" color="text.secondary">
+          {/* <Typography variant="subtitle1" color="text.secondary">
             Title - {pet?.title}
-          </Typography>
+          </Typography> */}
           <Typography variant="subtitle1" color="text.secondary">
             Category - {pet?.category?.name}
           </Typography>
@@ -46,7 +46,7 @@ function FeaturedPet({  pet  }) {
         </CardContent>
         <CardMedia
           component="img"
-          sx={{ width: 160, display: { xs: "none", sm: "block" } }}
+          sx={{ width: 160, display: { xs: "none", sm: "block" , objectFit: 'contain'} }}
           image={BACKEND_URI + "/" + pet?.image}
           alt={pet?.imageLabel}
         />
@@ -61,7 +61,7 @@ FeaturedPet.propTypes = {
     description: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     imageLabel: PropTypes.string.isRequired,
-    title: PropTypes.string,
+    // title: PropTypes.string,
   }).isRequired,
 };
 

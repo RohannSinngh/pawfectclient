@@ -11,7 +11,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
     <BrowserRouter>
+    {/* <div style={{ backgroundColor: 'lightblue', minHeight: '100vh' }}> */}
     <App />
+    {/* </div> */}
     </BrowserRouter>
     </Provider>
   </React.StrictMode>
